@@ -24,4 +24,13 @@ def generate_weather(season):
         wind = random.randint(5, 15)
         rain = random.randint(10, 30)
 
-    return temperature, wind, rain
+    # Determine a description based on the generated values
+    description = "Clear skies" if rain < 20 else "Cloudy with showers"
+    if temperature > 30:
+        description = "Hot and sunny"
+    elif temperature < 0:
+        description = "Freezing and snowy"
+    elif rain > 60:
+        description = "Heavy rain"
+
+    return temperature, wind, rain, description
