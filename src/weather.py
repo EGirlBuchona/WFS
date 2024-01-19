@@ -1,5 +1,26 @@
-# src/weather.py
 import random
+import requests
+
+API_KEY = "#"  # Your OpenWeather API key
+
+def get_real_weather(city):
+    """
+   Get real-time weather data for a specific city using the OpenWeather API.
+    """
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        data = response.json()
+        temperature = data['main']['temp']
+        wind = data['wind']['speed']
+        rain = data.get('rain', {}).get('1h', 0)  # Rain in the last hour, if available
+        description = data['weather'][0]['description'].capitalize()
+
+        return temperature, wind, rain, description
+    else:
+        print(f"Error: No se pudo obtener el clima para {city}. Status Code: {response.status_code}")
+        return None, None, None, "Data not available"
 
 def generate_weather(season):
     # Set temperature, wind, and rain ranges based on the season

@@ -1,0 +1,9 @@
+Weekly Real-Weather Forecast for New york:
+
+Wednesday | ⛅ 22.39°C | Wind:  | Rain:  | Clear sky
+Thursday | ⛅ 22.39°C | Wind:  | Rain:  | Clear sky
+Friday | ⛅ 22.39°C | Wind:  | Rain:  | Clear sky
+Saturday | ⛅ 22.39°C | Wind:  | Rain:  | Clear sky
+Sunday | ⛅ 22.39°C | Wind:  | Rain:  | Clear sky
+Monday | ⛅ 22.39°C | Wind:  | Rain:  | Clear sky
+Tuesday | ⛅ 22.39°C | Wind:  | Rain:  | Clear sky

@@ -2,7 +2,7 @@
 
 def display_forecast(day, temperature, wind, rain, description, file=None):
     # Visualize wind level with symbols and rain percentage with icons
-    wind_level = "🌬️" * (wind // 10)
+    wind_level = "🌬️" * (int(wind) // 10)
     rain_level = "💧" * (rain // 20)
 
     # Choose an icon based on temperature
