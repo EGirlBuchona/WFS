@@ -5,11 +5,14 @@
 
 ## Overview
 
-The **Weather Forecast Simulator** is a dynamic Python program that generates a 7-day weather forecast based on a selected season. The simulator provides detailed daily weather conditions, including temperature, wind, and rain probabilities. With a user-friendly console visualization, ASCII graphics, and emoji icons, this tool offers an engaging way to display forecast information. Version 2 introduces detailed weather descriptions, emoji icons for enhanced visualization, and a feature to save forecasts to a file.
+The **Weather Forecast Simulator** is a dynamic Python program that generates a 7-day weather forecast based on a selected season or retrieves real-time weather data from OpenWeather API for a specified city. The simulator provides detailed daily weather conditions, including temperature, wind, and rain probabilities, displayed in a user-friendly console with ASCII graphics and emoji icons.
+
+Version 3 introduces real-world weather data integration using OpenWeather API, along with improved error handling and file encoding support for Unicode.
 
 ## Features
 
-- **Season-Based Forecasting**: Generates realistic daily weather data (temperature, wind, and rain) that varies based on the selected season: summer, winter, spring, or fall.
+- **Real-Time Weather Data**: Fetches real-time weather data from OpenWeather API based on user-specified city.
+- **Season-Based Forecasting**: Generates realistic daily weather data (temperature, wind, and rain) based on the selected season: summer, winter, spring, or fall.
 - **Detailed Daily Weather**: Each day in the forecast includes:
   - Temperature in Celsius
   - Wind intensity displayed visually with ASCII bars
@@ -28,7 +31,7 @@ WFS/
 │   └── icons.txt                # Optional ASCII icons for weather representation
 ├── src/                         # Source code
 │   ├── main.py                  # Main script to execute the forecast
-│   ├── weather.py               # Generates weather data with descriptions
+│   ├── weather.py               # Generates weather data with descriptions and API integration
 │   ├── visualization.py         # Handles display formatting and file output
 │   └── utils.py                 # Utility functions (e.g., date management)
 ├── tests/                       # Placeholder for testing scripts
@@ -47,25 +50,26 @@ WFS/
    ```
 
 2. **Install Dependencies**:  
-   This project requires Python 3.6 or later. All dependencies are standard libraries, so no additional packages are needed. You can still run:
+   Ensure Python 3.6 or later is installed. Install required packages with:
    ```bash
    pip install -r requirements.txt
    ```
-   to check for any future dependencies.
 
 3. **Run the Program**:
    ```bash
    python src/main.py
    ```
 
-4. **Enter the Season** when prompted to see a forecast tailored for that season.
+4. **Choose Mode**:
+   - **Real-Weather Mode**: Enter a city name (e.g., "Tokyo") to retrieve real-time data from OpenWeather.
+   - **Seasonal Simulation**: Enter a season (e.g., "summer") to generate simulated weather data.
 
 ## Example Usage
 
-Upon running the program, you’ll be prompted to enter a season. After selecting one, you will see a 7-day weather forecast in the console, similar to this:
+Upon running the program, you’ll be prompted to choose a mode. After selecting one, you will see a 7-day weather forecast in the console, similar to this:
 
 ```plaintext
-Weather Forecast for Summer:
+Weekly Real-Weather Forecast for London:
 
 Monday    | ☀️  32°C | Wind: 🌬️🌬️ | Rain: 💧 | Hot and sunny
 Tuesday   | ⛅  29°C | Wind: 🌬️🌬️🌬️ | Rain:  | Clear skies
@@ -73,20 +77,21 @@ Wednesday | 🌧️ 24°C | Wind: 🌬️🌬️🌬️ | Rain: 💧💧 | Cloud
 ...
 ```
 
-The forecast will also be saved to `weekly_forecast.txt` in the project directory, with each day’s conditions for easy review.
+The forecast is saved to `weekly_forecast.txt` in the project directory, with each day’s conditions for easy review.
 
-**Date Updated:** January 18, 2024
-## New in Version 2
+**Date Updated:** January 19, 2024
 
-- **Weather Descriptions**: Detailed descriptions based on temperature, wind, and rain levels, such as “Hot and sunny” or “Cloudy with showers.”
-- **Emoji Icons**: Visual representation of weather conditions using icons like ☀️, 🌧️, and ❄️.
-- **File Output**: Each forecast is saved to a text file (`weekly_forecast.txt`) for future reference.
+## New in Version 3
+
+- **Real-Time Weather Data**: Fetches real-time weather data from OpenWeather API based on user input.
+- **Improved Error Handling**: Enhanced error messages for API failures and connection issues.
+- **Unicode Support**: File output now supports UTF-8 encoding to handle Unicode characters (e.g., emojis).
 
 ## Future Improvements
 
 - **Add a GUI**: Create a graphical interface using `tkinter` or `PyQt` for an enhanced user experience.
-- **Real-World Data from APIs**: Integrate with a weather API (e.g., OpenWeatherMap) for real-time data comparison.
-- **Forecast Accuracy Simulation**: Implement "confidence" levels for forecast accuracy.
+- **Extended Forecast Options**: Allow users to specify a custom date range for the forecast.
+- **Graphical Representation**: Integrate `matplotlib` for temperature and wind graphs.
 
 ## License
 
@@ -95,3 +100,4 @@ This project is open-source under the MIT License.
 ## Author’s Note
 
 This project is part of a series of professional portfolio projects by Gustavo Cocone Zavaleta. Thank you for reviewing the work!
+
